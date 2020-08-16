@@ -65,16 +65,16 @@ print(ContractHandler.artifacts_path)
 config = ocean.config
 
 account = get_account(0) # use if env vars are declared
-consumer_account = get_account(1) # PARITY_ADDRESS1 PARITY_KEYFILE1 & PARITY_PASSWORD1
+# consumer_account = get_account(1) # PARITY_ADDRESS1 PARITY_KEYFILE1 & PARITY_PASSWORD1
 
 #It is also possible to initialize account as follows bypassing the creation of environment variables
 #account = Account(Web3.toChecksumAddress(address), pswrd, key_file, encr_key, key)
 
 ddo = ocean.assets.create(metadata, account, providers=[])
-assert ddo is not None, f'Registering asset on-chain failed.'
-print("create asset success")
-
-# Now we have an asset registered, we can verify it exists by resolving the did
-_ddo = ocean.assets.resolve(ddo.did)
-# ddo and _ddo should be identical
-print(_ddo.did)
+# assert ddo is not None, f'Registering asset on-chain failed.'
+# print("create asset success")
+#
+# # Now we have an asset registered, we can verify it exists by resolving the did
+# _ddo = ocean.assets.resolve(ddo.did)
+# # ddo and _ddo should be identical
+# print(_ddo.did)
